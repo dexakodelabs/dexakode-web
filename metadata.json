@@ -1,0 +1,8 @@
+{
+  "name": "DEXACODE | Premium Web Development & UI/UX Agency",
+  "description": "Bespoke digital experiences, high-end web development, and immersive UI/UX design for startups and brands ready to scale online.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
