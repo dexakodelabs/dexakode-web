@@ -13,6 +13,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const titleRef = useRef<HTMLHeadingElement>(null);
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!titleRef.current) return;
     const rect = titleRef.current.getBoundingClientRect();
@@ -56,10 +61,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
           
           <div className="flex flex-col sm:flex-row gap-6">
             <button 
-              onClick={onOpenEstimator}
+              onClick={scrollToContact}
               className="px-12 py-5 bg-bronze text-white text-lg font-bold rounded-full hover:brightness-110 transition-all active:scale-95 shadow-2xl shadow-bronze/20"
             >
-              Start Your Project
+              <span className="whitespace-nowrap">Start Your Project</span>
             </button>
             <div className="flex items-center gap-6">
               <div className="flex -space-x-4">

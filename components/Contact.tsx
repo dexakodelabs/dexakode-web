@@ -75,13 +75,13 @@ export const Contact: React.FC = () => {
               <div className="w-16 h-16 rounded-full glass flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-white transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(194,142,111,0.4)]">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
               </div>
-              <span className="text-2xl font-bold tracking-tight group-hover:text-bronze transition-colors">hello@dexacode.io</span>
+              <span className="text-2xl font-bold tracking-tight group-hover:text-bronze transition-colors">dexakodelabs@gmail.com</span>
             </div>
             <div className="flex items-center gap-8 group">
               <div className="w-16 h-16 rounded-full glass flex items-center justify-center text-bronze">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
               </div>
-              <span className="text-2xl font-bold tracking-tight">Los Angeles / Remote</span>
+              <span className="text-2xl font-bold tracking-tight">India / Remote</span>
             </div>
           </div>
         </div>
