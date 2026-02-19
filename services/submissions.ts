@@ -2,11 +2,17 @@
 import { createClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL = 'https://isepaobrhjnqcdnyhfgo.supabase.co';
-// Note: In production, these should be environment variables.
-// Using a placeholder for the anon key which is required for the Supabase JS client.
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzZXBhb2JyaGpucWNkbnloZmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MjA3MTEsImV4cCI6MjA4NzA5NjcxMX0.FodKhI1h90XxeJWkTSXeEe7wi25EW7ieEqRSDTw8CNw';
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Safer environment variable access for browser environments
+const getSupabaseKey = () => {
+  try {
+    return (window as any).process?.env?.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzZXBhb2JyaGpucWNkbnloZmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MjA3MTEsImV4cCI6MjA4NzA5NjcxMX0.FodKhI1h90XxeJWkTSXeEe7wi25EW7ieEqRSDTw8CNw';
+  } catch (e) {
+    return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzZXBhb2JyaGpucWNkbnloZmdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MjA3MTEsImV4cCI6MjA4NzA5NjcxMX0.FodKhI1h90XxeJWkTSXeEe7wi25EW7ieEqRSDTw8CNw';
+  }
+};
+
+const supabase = createClient(SUPABASE_URL, getSupabaseKey());
 
 export interface ContactSubmission {
   firstName: string;
@@ -34,7 +40,6 @@ export const submitContactForm = async (data: ContactSubmission) => {
     
     if (dbError) {
       console.warn('Supabase Insert Warning:', dbError.message);
-      // We don't throw here to allow the email to still send even if DB is misconfigured
     }
   } catch (e) {
     console.error('Database connection failed:', e);

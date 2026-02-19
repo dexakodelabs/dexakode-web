@@ -1,9 +1,18 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
+const getApiKey = () => {
+  try {
+    return (window as any).process?.env?.API_KEY || "";
+  } catch (e) {
+    return "";
+  }
+};
+
 export const startConsultation = async (userPrompt: string) => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  console.log(process.env.API_KEY);
+  const apiKey = getApiKey();
+  const ai = new GoogleGenAI({ apiKey });
+  
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
     contents: userPrompt,
@@ -24,7 +33,9 @@ export const startConsultation = async (userPrompt: string) => {
 };
 
 export const generateStructuredEstimate = async (chatHistory: string) => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = getApiKey();
+  const ai = new GoogleGenAI({ apiKey });
+  
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
     contents: `Based on the following creative consultation, provide a digital product roadmap summary:
