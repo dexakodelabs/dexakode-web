@@ -10,8 +10,6 @@ import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { AIEstimator } from './components/AIEstimator';
-import { GoogleGenAI, Type } from "@google/genai";
-console.log("Hi",process.env.API_KEY);
 
 const App: React.FC = () => {
   const [showEstimator, setShowEstimator] = useState(false);

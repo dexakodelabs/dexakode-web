@@ -122,7 +122,7 @@ export const Process: React.FC = () => {
         <div className="flex flex-col items-center text-center mb-24">
           <div className="flex items-center gap-4 mb-8">
             <div className="h-[1px] w-12 bg-bronze"></div>
-            <span className="text-bronze text-sm font-bold tracking-[0.2em] uppercase">My Process</span>
+            <span className="text-bronze text-sm font-bold tracking-[0.2em] uppercase">Our Process</span>
           </div>
           
           <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black uppercase leading-none tracking-tighter mb-6">
