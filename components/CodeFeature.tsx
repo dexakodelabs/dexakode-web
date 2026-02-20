@@ -20,7 +20,7 @@ export const NexusHero: React.FC = () => {
   );
 };`;
 
-const TerminalNetworkCard: React.FC<{ activated: boolean }> = ({ activated }) => {
+const TerminalNetworkCard: React.FC<{ activated: boolean; className?: string }> = ({ activated, className = '' }) => {
   const getBarColor = (index: number) => {
     switch(index) {
       case 3: return 'bg-[#7DD3FC] shadow-[0_0_10px_rgba(125,211,252,0.3)]';
@@ -30,7 +30,7 @@ const TerminalNetworkCard: React.FC<{ activated: boolean }> = ({ activated }) =>
     }
   };
   return (
-    <div className={`absolute -left-12 top-1/4 z-30 w-52 bg-[#0A0A0B]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] transition-all duration-1000 ease-out hover:scale-110 hover:border-bronze/30 cursor-pointer group/card ${activated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+    <div className={`${className} absolute -left-12 top-1/4 z-30 w-52 bg-[#0A0A0B]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] transition-all duration-1000 ease-out hover:scale-110 hover:border-bronze/30 cursor-pointer group/card ${activated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <span className="text-[#38BDF8] font-black text-xs">$</span>
@@ -57,8 +57,8 @@ const TerminalNetworkCard: React.FC<{ activated: boolean }> = ({ activated }) =>
   );
 };
 
-const ProductionReadyCard: React.FC<{ activated: boolean }> = ({ activated }) => (
-  <div className={`absolute -right-12 top-[42%] z-30 w-52 bg-[#0A0A0B]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] transition-all duration-1000 ease-out hover:scale-110 hover:border-bronze/30 cursor-pointer group/card ${activated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+const ProductionReadyCard: React.FC<{ activated: boolean; className?: string }> = ({ activated, className = '' }) => (
+  <div className={`${className} absolute -right-12 top-[42%] z-30 w-52 bg-[#0A0A0B]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] transition-all duration-1000 ease-out hover:scale-110 hover:border-bronze/30 cursor-pointer group/card ${activated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
     <div className="flex items-center justify-between mb-6">
       <div className="flex items-center gap-2">
         <span className="text-[#38BDF8] font-black text-xs">$</span>
@@ -126,13 +126,13 @@ export const CodeFeature: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-[120vh] bg-[#080808] overflow-hidden flex flex-col items-center pt-28 pb-28">
+    <section ref={sectionRef} className="relative min-h-[90vh] md:min-h-[120vh] bg-[#080808] overflow-hidden flex flex-col items-center pt-16 md:pt-28 pb-2 md:pb-28">
       <div className="absolute inset-0 pointer-events-none opacity-10 bg-squares"></div>
       
       <div className="sticky top-0 h-screen flex items-center justify-center w-full max-w-7xl px-4">
         <div className="relative w-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-          <TerminalNetworkCard activated={progress > 0.2} />
-          <ProductionReadyCard activated={progress > 0.4} />
+          <TerminalNetworkCard className="hidden md:block" activated={progress > 0.2} />
+          <ProductionReadyCard className="hidden md:block" activated={progress > 0.4} />
           
           <div className="absolute -inset-[1px] rounded-[3.1rem] overflow-hidden pointer-events-none z-0">
             <div 
@@ -143,8 +143,8 @@ export const CodeFeature: React.FC = () => {
             />
           </div>
 
-          <div className="relative glass rounded-[3rem] overflow-hidden border border-white/5 flex flex-col h-[580px] backdrop-blur-3xl bg-[#0A0A0B]/98 shadow-2xl transition-all duration-700 hover:border-bronze/10 z-10">
-            <div className="flex items-center gap-6 px-10 py-6 bg-white/[0.03] border-b border-white/5">
+          <div className="relative glass rounded-[3rem] overflow-hidden border border-white/5 flex flex-col h-[420px] sm:h-[580px] backdrop-blur-3xl bg-[#0A0A0B]/98 shadow-2xl transition-all duration-700 hover:border-bronze/10 z-10">
+            <div className="flex items-center gap-6 px-4 sm:px-10 py-3 sm:py-6 bg-white/[0.03] border-b border-white/5">
               <div className="flex gap-2.5">
                 <div className="w-3 h-3 rounded-full bg-[#FF5F56]/60"></div>
                 <div className="w-3 h-3 rounded-full bg-[#FFBD2E]/60"></div>
@@ -153,7 +153,7 @@ export const CodeFeature: React.FC = () => {
               <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">ENGINEERING / <span className="text-white">NEXUSHERO.TSX</span></span>
             </div>
 
-            <div className="flex flex-1 overflow-hidden font-mono text-[13px] md:text-sm leading-[1.7] px-10 py-8">
+            <div className="flex flex-1 overflow-hidden font-mono text-[13px] md:text-sm leading-[1.7] px-4 sm:px-10 py-4 sm:py-8">
               <div className="w-12 text-slate-700 select-none hidden md:block">
                 {[...Array(Math.max(22, lines.length))].map((_, i) => (
                   <div key={i} className="transition-opacity duration-500" style={{ opacity: i < lines.length ? 0.6 : 0.1 }}>

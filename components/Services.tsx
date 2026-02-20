@@ -26,7 +26,7 @@ const SERVICE_DATA = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-40 px-8">
+    <section id="services" className="py-20 md:py-40 px-6 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <div className="h-[1px] w-12 bg-bronze"></div>

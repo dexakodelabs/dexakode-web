@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 bg-black/50 backdrop-blur-sm py-8 marquee-mask opacity-0 animate-[fade-in_1.5s_ease-out_1s_forwards]">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 bg-black/50 backdrop-blur-sm py-4 sm:py-8 marquee-mask opacity-0 animate-[fade-in_1.5s_ease-out_1s_forwards]">
         <div className="flex animate-infinite-scroll whitespace-nowrap">
                 {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">

@@ -10,7 +10,7 @@ const PROJECTS = [
 
 export const Portfolio: React.FC = () => {
   return (
-    <section id="work" className="py-40 px-8 bg-black">
+    <section id="work" className="py-20 md:py-40 px-6 md:px-8 bg-black">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32">
           <div>

@@ -51,7 +51,7 @@ const ProcessStep: React.FC<{ step: typeof STEPS[0]; index: number; progress: nu
   return (
     <div 
       ref={stepRef}
-      className={`group relative flex flex-col sm:flex-row items-center gap-12 sm:gap-0 transition-all duration-[1200ms] cubic-bezier(0.23, 1, 0.32, 1) ${
+      className={`group relative flex flex-col sm:flex-row items-center gap-12 sm:gap-0 pl-12 sm:pl-0 transition-all duration-[1200ms] cubic-bezier(0.23, 1, 0.32, 1) ${
         isVisible 
           ? 'opacity-100 blur-0 translate-y-0 scale-100' 
           : 'opacity-0 blur-2xl translate-y-20 scale-95'
@@ -67,11 +67,11 @@ const ProcessStep: React.FC<{ step: typeof STEPS[0]; index: number; progress: nu
         </p>
         
         {/* Mobile Indicator */}
-        <div className={`absolute -left-10 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full sm:hidden transition-all duration-500 ${isActive ? 'bg-bronze scale-125 shadow-[0_0_15px_#C28E6F]' : 'bg-white/10'}`}></div>
+        <div className={`absolute -left-8 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full sm:hidden transition-all duration-500 ${isActive ? 'bg-bronze scale-125 shadow-[0_0_15px_#C28E6F]' : 'bg-white/10'}`}></div>
       </div>
 
       {/* Central Number Circle */}
-      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 hidden sm:flex">
+      <div className="absolute -left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 hidden sm:flex">
         <div className={`w-12 h-12 rounded-full bg-black border-2 transition-all duration-700 flex items-center justify-center ${
           isActive 
             ? 'border-bronze scale-110 shadow-[0_0_30px_rgba(194,142,111,0.6)]' 
@@ -112,7 +112,7 @@ export const Process: React.FC = () => {
   }, []);
 
   return (
-    <section id="process" ref={containerRef} className="relative py-40 px-8 overflow-hidden bg-black">
+    <section id="process" ref={containerRef} className="relative py-20 md:py-40 px-6 md:px-8 overflow-hidden bg-black">
       {/* Background Decorative Number */}
       <div className="absolute right-8 top-20 text-[20vw] font-black text-white/[0.02] leading-none pointer-events-none select-none">
         02

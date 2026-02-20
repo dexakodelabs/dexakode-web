@@ -62,7 +62,7 @@ const UptimeSLACard: React.FC = () => {
 
   return (
     <div ref={cardRef} className="group relative">
-      <div className="bg-[#080808] rounded-[2.5rem] p-8 md:p-10 h-full border border-white/5 flex flex-col justify-between overflow-hidden relative transition-all duration-700 hover:border-white/10 shadow-2xl">
+      <div className="bg-[#080808] rounded-[2.5rem] p-8 md:p-10 min-h-[420px] md:h-full border border-white/5 flex flex-col justify-between overflow-hidden relative transition-all duration-700 hover:border-white/10 shadow-2xl">
         {/* Top Status */}
         <div className="relative z-10 flex items-center justify-between">
           <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/20">UPTIME SLA</h4>
@@ -73,7 +73,7 @@ const UptimeSLACard: React.FC = () => {
         </div>
 
         {/* The Rising Bar Graph */}
-        <div className="relative z-10 flex-grow flex items-end justify-between py-10 gap-[3px] md:gap-[5px]">
+        <div className="relative z-10 h-40 md:flex-grow flex items-end justify-between py-10 gap-[3px] md:gap-[5px]">
           {barConfigs.map(([height, opacity], i) => {
             const isWhiteGlow = opacity === 1.0;
             return (
@@ -120,7 +120,7 @@ export const CopilotFeature: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-32 pb-32 px-8 bg-[#0A0A0B] overflow-hidden">
+    <section ref={sectionRef} className="pt-4 md:pt-32 pb-8 md:pb-32 px-6 md:px-8 bg-[#0A0A0B] overflow-hidden">
       <div 
         className={`max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
