@@ -45,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimator }) => {
 
         <button 
           onClick={onOpenEstimator}
-          className="group px-8 py-3 rounded-full border border-white/20 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#C28E6F] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:border-white transition-all flex items-center gap-2 active:scale-95 min-w-[180px] justify-center overflow-hidden"
+          className="group px-4 sm:px-8 py-2 sm:py-3 rounded-full border border-white/20 text-sm sm:text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#C28E6F] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:border-white transition-all flex items-center gap-2 active:scale-95 min-w-[120px] md:min-w-[180px] justify-center overflow-hidden"
         >
           <span className="inline-block transition-transform duration-300 group-hover:scale-110">
             Let's Talk

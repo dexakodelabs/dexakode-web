@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-8 pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 sm:px-8 pt-20 overflow-hidden">
       <div className="max-w-[1400px] mx-auto w-full relative z-10 flex-grow flex flex-col justify-center pb-20">
         <div className="flex flex-col mb-12">
           <div className="flex items-center gap-4 mb-8 opacity-0 animate-[fade-in_1s_ease-out_forwards]">
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
           <div className="flex flex-col sm:flex-row gap-6">
             <button 
               onClick={scrollToContact}
-              className="px-12 py-5 bg-bronze text-white text-lg font-bold rounded-full hover:brightness-110 transition-all active:scale-95 shadow-2xl shadow-bronze/20"
+              className="px-6 sm:px-12 py-3 sm:py-5 bg-bronze text-white text-base sm:text-lg font-bold rounded-full hover:brightness-110 transition-all active:scale-95 shadow-2xl shadow-bronze/20"
             >
               <span className="whitespace-nowrap">Start Your Project</span>
             </button>
@@ -84,11 +84,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
 
       <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 bg-black/50 backdrop-blur-sm py-8 marquee-mask opacity-0 animate-[fade-in_1.5s_ease-out_1s_forwards]">
         <div className="flex animate-infinite-scroll whitespace-nowrap">
-          {[...Array(4)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
               {DISCIPLINES.map((discipline, idx) => (
-                <div key={idx} className="flex items-center px-16 group">
-                  <span className="text-2xl md:text-3xl font-black uppercase tracking-[0.15em] text-white/10 group-hover:text-bronze transition-all duration-700 cursor-default">
+                    <div key={idx} className="flex items-center px-6 sm:px-16 group">
+                      <span className="text-lg sm:text-2xl md:text-3xl font-black uppercase tracking-[0.15em] text-white/10 group-hover:text-bronze transition-all duration-700 cursor-default">
                     {discipline}
                   </span>
                   <div className="mx-16 w-1.5 h-1.5 rounded-full bg-bronze/20 group-hover:bg-bronze transition-colors duration-700"></div>

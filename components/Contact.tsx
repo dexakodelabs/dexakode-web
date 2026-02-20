@@ -52,7 +52,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-40 px-8 relative overflow-hidden">
+    <section id="contact" className="py-20 sm:py-40 px-6 sm:px-8 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute -bottom-40 -left-40 w-[60vw] h-[60vw] mesh-gradient rounded-full opacity-5 pointer-events-none"></div>
 
@@ -86,11 +86,11 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative min-h-[600px] flex flex-col">
+        <div className="relative min-h-[420px] sm:min-h-[600px] flex flex-col">
           {status !== 'success' ? (
             <form 
               onSubmit={handleSubmit}
-              className={`glass p-8 md:p-12 rounded-[3rem] space-y-8 border-white/5 transition-all duration-700 ${status === 'submitting' ? 'opacity-40 blur-sm pointer-events-none scale-95' : 'opacity-100 blur-0 scale-100'}`}
+              className={`glass p-6 md:p-12 rounded-[3rem] space-y-6 border-white/5 transition-all duration-700 ${status === 'submitting' ? 'opacity-40 blur-sm pointer-events-none scale-95' : 'opacity-100 blur-0 scale-100'}`}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     placeholder="Alex" 
                     required
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
                   />
                 </div>
                 <div>
@@ -113,7 +113,7 @@ export const Contact: React.FC = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     placeholder="Visionary Co." 
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ export const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder="alex@visionary.com" 
                   required
-                  className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
+                  className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 focus:outline-none focus:border-bronze transition-all placeholder:text-white/10" 
                 />
               </div>
               <div>
@@ -138,7 +138,7 @@ export const Contact: React.FC = () => {
                   rows={4} 
                   placeholder="Tell us about the digital reality you want to create..." 
                   required
-                  className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 focus:outline-none focus:border-bronze transition-all resize-none placeholder:text-white/10"
+                  className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 focus:outline-none focus:border-bronze transition-all resize-none placeholder:text-white/10"
                 ></textarea>
               </div>
 
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
               <button 
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full py-6 bg-bronze text-white font-black uppercase tracking-[0.2em] rounded-2xl hover:brightness-110 transition-all shadow-2xl shadow-bronze/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-3"
+                className="w-full py-3 sm:py-6 bg-bronze text-white font-black uppercase tracking-[0.15em] rounded-2xl hover:brightness-110 transition-all shadow-2xl shadow-bronze/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-3 text-base sm:text-lg"
               >
                 {status === 'submitting' ? (
                   <>
