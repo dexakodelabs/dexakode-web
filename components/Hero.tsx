@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
         @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-25%); } }
         @keyframes reveal-up { 0% { transform: translateY(120%) rotateX(-20deg) skewY(5deg); opacity: 0; filter: blur(10px); } 100% { transform: translateY(0) rotateX(0deg) skewY(0deg); opacity: 1; filter: blur(0); } }
         @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-infinite-scroll { animation: infinite-scroll 25s linear infinite; }
+        .animate-infinite-scroll { animation: infinite-scroll 15s linear infinite; }
         .marquee-mask { -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
         .spotlight-container { position: relative; }
         .spotlight-text { background-image: radial-gradient(circle 250px at var(--mouse-x) var(--mouse-y), #ffffff 0%, rgba(255, 255, 255, 0.08) 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
