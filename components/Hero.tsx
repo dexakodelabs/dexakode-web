@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEstimator }) => {
         <div className="flex flex-col mb-12">
           <div className="flex items-center gap-4 mb-8 opacity-0 animate-[fade-in_1s_ease-out_forwards]">
             <div className="h-[1px] w-12 bg-bronze"></div>
-            <span className="text-bronze text-sm font-bold tracking-[0.2em] uppercase">Premium Web Agency</span>
+            <span className="text-bronze text-sm font-bold tracking-[0.2em] uppercase">Launch Your Vision</span>
           </div>
           
           <h1 
